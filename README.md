@@ -17,7 +17,7 @@ The **Pokémon Trading Card Game (TCG)** is a turn-based card game where players
 - **Energy Cards** to power up attacks
 - **Trainer Cards** to use one-time effects (draw, heal, etc.)
 
-The goal is to **knock out your opponent’s Pokémon** and collect all 6 **Prize Cards** to win!
+The goal is to **knock out your opponent's Pokémon** and collect all 6 **Prize Cards** to win!
 
 ---
 
@@ -30,6 +30,7 @@ The goal is to **knock out your opponent’s Pokémon** and collect all 6 **Priz
 - ✅ Choose 1 Active Pokémon + up to 3 Bench Pokémon  
 - ✅ Draw 6 Prize Cards  
 - ✅ Turn-based battle system
+- ✅ Full evolution chains for Kanto starters
 
 ---
 
@@ -39,6 +40,8 @@ The goal is to **knock out your opponent’s Pokémon** and collect all 6 **Priz
 - 🧮 Dynamic HP + damage tracking
 - 💀 Knockout detection + Prize card rewards
 - 🔁 Automatic promotion of Benched Pokémon on KO
+- ⚡ Energy cost validation for attacks
+- 🛡️ Weakness and resistance system
 
 ---
 
@@ -48,6 +51,7 @@ The goal is to **knock out your opponent’s Pokémon** and collect all 6 **Priz
 - 🛠️ Custom energy cost logic
 - 🎯 Attack only when energy requirements are met
 - 🎒 Attach one energy per turn
+- 🔄 Energy attachment validation
 
 ---
 
@@ -57,10 +61,11 @@ The goal is to **knock out your opponent’s Pokémon** and collect all 6 **Priz
 - 🔄 Evolves from correct lower stage only
 - 🔒 Cannot evolve from the wrong Pokémon or stage
 - ✅ Inherits HP and energy from previous evolution
+- ⚠️ Evolution validation checks
 
 ---
 
-### 💼 Trainer Cards (NEW!)
+### 💼 Trainer Cards
 
 - 🧙‍♂️ Playable Trainer cards with randomized effects:
   - 🃏 Draw 2 cards  
@@ -74,8 +79,9 @@ The goal is to **knock out your opponent’s Pokémon** and collect all 6 **Priz
 ### 👟 Retreat Mechanic
 
 - 🔄 Swap Active Pokémon with one from Bench
-- 🎒 Energy cost system can be added (planned)
+- 🎒 Energy cost system
 - ♻️ Preserves energy and damage
+- ⚠️ Retreat validation checks
 
 ---
 
@@ -92,10 +98,19 @@ pokemon_tcg_game/
 ├── trainer_card.py          # Trainer card logic and effect binding
 ├── pokemon_card.py          # HP, attacks, evolution logic
 │
-├── cards/                   # All Pokémon definitions
-│   ├── charmander.py        # and other Pokémon like squirtle, bulbasaur, etc.
+├── cards/                   # Pokémon definitions
+│   ├── bulbasaur.py         # Basic Grass Pokémon
+│   ├── ivysaur.py          # Stage 1 Grass Pokémon
+│   ├── venusaur.py         # Stage 2 Grass Pokémon
+│   ├── charmander.py       # Basic Fire Pokémon
+│   ├── charmeleon.py       # Stage 1 Fire Pokémon
+│   ├── charizard.py        # Stage 2 Fire Pokémon
+│   ├── squirtle.py         # Basic Water Pokémon
+│   ├── wartortle.py        # Stage 1 Water Pokémon
+│   └── blastoise.py        # Stage 2 Water Pokémon
 │
-├── README.md                # 💡 You're reading it!
+├── README.md                # Project documentation
+└── Pokémon_Trading_Card_Game_logo.svg.png
 ```
 
 ---
@@ -134,12 +149,13 @@ Follow the interactive prompts:
 
 | Feature | Status | Notes |
 |--------|--------|-------|
-| Retreat energy cost | ⏳ In progress | Deduct attached energy |
-| Full Bench management | ✅ Basic | UI cleanup, status effects coming |
 | AI player (vs CPU) | 🧠 Planned | Simple rule-based enemy logic |
 | Trainer card discard pile | 🗑️ Planned | Currently just removed from hand |
 | Win/Loss logging | 📜 Planned | Save game summary to a file |
-| GUI version | 💻 Dream feature | Tkinter or Pygame port
+| GUI version | 💻 Dream feature | Tkinter or Pygame port |
+| More Pokémon | 🎴 Planned | Add more evolution chains |
+| Special Conditions | 🎯 Planned | Poison, Sleep, etc. |
+| Item Cards | 🎁 Planned | Additional card type |
 
 ---
 
